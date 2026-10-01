@@ -1,75 +1,132 @@
-<!DOCTYPE html>
+<!DoCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>William Thatego Kola | Web Developer Portfolio</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>William~Thatego~Kola's Portfolio</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- Landing Header (No contact numbers shown here) -->
-    <header class="hero-landing">
-        <div class="logo">William Thatego Kola</div>
-        <nav>
-            <a href="#about" onclick="revealAndScroll('about')">About</a>
-            <a href="#projects" onclick="revealAndScroll('projects')">Project</a>
-            <a href="#contact" onclick="revealAndScroll('contact')">Contact</a>
-        </nav>
+  <!-- Home Page Section -->
+  <header id="home-page" class="page-section active">
+    <div class="home-container">
+      <h1 class="main-title">William~Thatego~Kola's Portfolio</h1>
+      
+      <!-- First Picture -->
+      <div class="image-wrapper">
+        <img src="1000945683.jpg" alt="Brain and Code Graphic" class="hero-image">
+      </div>
 
-        <!-- View Portfolio Action -->
-        <div class="landing-action">
-            <button id="viewBtn" onclick="showPortfolio()" class="btn">View Portfolio</button>
+      <!-- Green Button with White Letters -->
+      <button id="view-portfolio-btn" class="btn btn-green">Viwe Portfolio</button>
+    </div>
+  </header>
+
+  <!-- Navigation & Content Section -->
+  <main id="main-portfolio" class="page-section">
+    <div class="portfolio-container">
+      
+      <!-- Header Banner with Second Picture -->
+      <div class="banner-wrapper">
+        <img src="1000945658.jpg" alt="Falcon perched on a post" class="banner-image">
+        <div class="banner-overlay">
+          <h2>William Thatego Kola</h2>
         </div>
-    </header>
+      </div>
 
-    <!-- Main Content (Revealed when tapping View Portfolio or Header Links) -->
-    <main id="portfolioContent" style="display: none;">
+      <!-- Navigation Buttons (Black with White Text) -->
+      <nav class="nav-buttons">
+        <button class="nav-btn active" data-target="about-section">ABOUT</button>
+        <button class="nav-btn" data-target="skills-section">SKILLS</button>
+        <button class="nav-btn" data-target="projects-section">PROJECTS</button>
+        <button class="nav-btn" data-target="contacts-section">CONTACTS</button>
+      </nav>
 
+      <!-- Section Contents -->
+      <div class="content-area">
+        
         <!-- About Section -->
-        <section id="about" class="hero">
-            <h1>Hi, I'm William Thatego Kola</h1>
-            <p class="subtitle">Front-End Web Developer</p>
-            <p>I build clean, modern, and user-friendly websites using standard-compliant HTML, CSS & JavaScript.</p>
-            <a href="#contact" class="btn" onclick="revealAndScroll('contact')">Get in Touch</a>
+        <section id="about-section" class="tab-content active">
+          <h3>ABOUT</h3>
+          <div class="info-card center-text">
+            <h4>Hello!</h4>
+            <p>I'm Thatego William Kola,<br>A Front End Web Developer.</p>
+            <p>I build a clean, Morden, and user-friendly websites using a standard HTML, CSS &amp; JavaScript.</p>
+          </div>
         </section>
 
-        <!-- Featured Projects Section -->
-        <section id="projects" class="projects-section">
-            <h2>My Featured Projects</h2>
-            <div class="projects-grid">
+        <!-- Skills Section -->
+        <section id="skills-section" class="tab-content">
+          <h3>SKILLS</h3>
+          <div class="info-card">
+            <p>I have 1 year 3 months of skills which i gained from Freecodecamp.com.</p>
+            
+            <hr class="divider">
 
-                <!-- Project 1: Landlords Website -->
-                <div class="project-card">
-                    <h3>Landlords Website</h3>
-                    <p>A responsive web application designed for backyard tenants to easily view, track and pay their monthly rent to landlords.</p>
-                    <a href="#" class="project-link">View Project &rarr;</a>
-                </div>
+            <!-- Certificate Uploading Section -->
+            <div class="upload-box">
+              <h4>Upload Certificates</h4>
+              <p class="subtitle">Upload image or document files of your certificates below:</p>
+              
+              <input type="file" id="cert-input" accept="image/*,.pdf" multiple>
+              <label for="cert-input" class="file-label">Choose Files / Images</label>
 
-                <!-- Project 2: Bakery Website -->
-                <div class="project-card">
-                    <h3>Bakery Website</h3>
-                    <p>A responsive client website created for a local bakery featuring product galleries and an interactive contact form.</p>
-                    <a href="#" class="project-link">View Project &rarr;</a>
-                </div>
-
+              <div id="cert-list" class="cert-grid"></div>
             </div>
+          </div>
         </section>
 
-        <!-- Contact Section -->
-        <section id="contact" class="contact-section">
-            <h2>Contact Me</h2>
-            <p><strong>Phone:</strong> +27 72 344 9512</p>
-            <p><strong>Email:</strong> kolathatego@gmail.com</p>
+        <!-- Projects Section -->
+        <section id="projects-section" class="tab-content">
+          <h3>PROJECTS</h3>
+
+          <!-- Project 1 -->
+          <div class="project-card">
+            <h4>1. Landlords Website</h4>
+            <p>A responsive web application designed for backyard tenants to easily view, track and pay their monthly rent to landlords.</p>
+            <div class="project-url">
+              <label>Live URL:</label>
+              <input type="text" placeholder="https://..." value="">
+            </div>
+          </div>
+
+          <!-- Project 2 -->
+          <div class="project-card">
+            <h4>2. Non's Bakery Website</h4>
+            <p>A responsive client website created for a local bakery featuring product galleries, payment button, location and an interactive contact form</p>
+            <div class="project-url">
+              <label>Live URL:</label>
+              <input type="text" placeholder="https://..." value="">
+            </div>
+          </div>
         </section>
 
-    </main>
+        <!-- Contacts Section -->
+        <section id="contacts-section" class="tab-content">
+          <h3>CONTACTS</h3>
+          <div class="info-card contact-card">
+            <p><strong>Phone:</strong> <a href="tel:+27723449512">+27 72 344 9512</a></p>
+            <p><strong>Email:</strong> <a href="mailto:kolathatego@gmail.com">kolathatego@gmail.com</a></p>
+          </div>
+        </section>
 
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2026 William Thatego Kola. www.williamthatego-dev-portfolio.com</p>
-    </footer>
+      </div>
 
-    <script src="script.js"></script>
+      <!-- Back to Top / Home -->
+      <div class="action-bar">
+        <button id="back-home-btn" class="btn btn-black-sm">← Back to Home</button>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>©2026 William Thatego Kola.</p>
+    <p><a href="http://www.williamthatego-dev-portfolio.com" target="_blank" rel="noopener">www.williamthatego-dev-portfolio.com</a></p>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
