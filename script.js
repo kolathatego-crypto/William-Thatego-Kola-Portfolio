@@ -5,46 +5,52 @@ document.addEventListener("DOMContentLoaded", () => {
   const backHomeBtn = document.getElementById("back-home-btn");
 
   const navBtns = document.querySelectorAll(".nav-btn");
-  const tabContents = document.querySelectorAll(".tab-content");
+  const modals = document.querySelectorAll(".modal");
+  const closeBtns = document.querySelectorAll(".close-btn");
 
   const certInput = document.getElementById("cert-input");
   const certList = document.getElementById("cert-list");
 
-  // Show Main Portfolio when "Viwe Portfolio" button is clicked
+  // Show Main Portfolio view
   viewPortfolioBtn.addEventListener("click", () => {
     homePage.classList.remove("active");
     mainPortfolio.classList.add("active");
-    window.scrollTo(0, 0);
   });
 
   // Return to Home Page
   backHomeBtn.addEventListener("click", () => {
     mainPortfolio.classList.remove("active");
     homePage.classList.add("active");
-    window.scrollTo(0, 0);
   });
 
-  // Tab switching logic for ABOUT, SKILLS, PROJECTS, CONTRACTS
+  // Open Modal Popup when clicking ABOUT, SKILLS, PROJECTS, CONTRACTS
   navBtns.forEach((btn) => {
     btn.addEventListener("click", () => {
-      const targetId = btn.getAttribute("data-target");
-
-      // Set active nav button
-      navBtns.forEach((b) => b.classList.remove("active"));
-      btn.classList.add("active");
-
-      // Set active tab content
-      tabContents.forEach((content) => {
-        if (content.id === targetId) {
-          content.classList.add("active");
-        } else {
-          content.classList.remove("active");
-        }
-      });
+      const targetModalId = btn.getAttribute("data-target");
+      const targetModal = document.getElementById(targetModalId);
+      if (targetModal) {
+        targetModal.classList.add("open");
+      }
     });
   });
 
-  // Handle Certificate File Uploads
+  // Close Modal on 'X' click
+  closeBtns.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      btn.closest(".modal").classList.remove("open");
+    });
+  });
+
+  // Close Modal on clicking background
+  window.addEventListener("click", (e) => {
+    modals.forEach((modal) => {
+      if (e.target === modal) {
+        modal.classList.remove("open");
+      }
+    });
+  });
+
+  // Certificate Upload Handler
   certInput.addEventListener("change", (e) => {
     const files = Array.from(e.target.files);
 
@@ -58,12 +64,12 @@ document.addEventListener("DOMContentLoaded", () => {
         if (file.type.startsWith("image/")) {
           item.innerHTML = `
             <img src="${event.target.result}" alt="${file.name}">
-            <p>${file.name}</p>
+            <p style="font-size:0.75rem;">${file.name}</p>
           `;
         } else {
           item.innerHTML = `
-            <div style="padding: 20px 0; font-size: 2rem;">📄</div>
-            <p>${file.name}</p>
+            <div style="font-size: 1.5rem;">📄</div>
+            <p style="font-size:0.75rem;">${file.name}</p>
           `;
         }
 
@@ -74,4 +80,5 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+
 
