@@ -8,120 +8,108 @@
 </head>
 <body>
 
-  <!-- Home Page Section -->
+  <!-- HOME PAGE -->
   <header id="home-page" class="page-section active">
-    <div class="home-container">
+    <div class="home-overlay">
       <h1 class="main-title">William~Thatego~Kola's Portfolio</h1>
-      
-      <!-- First Picture -->
-      <div class="image-wrapper">
-        <img src="1000945683.jpg" alt="Brain and Code Graphic" class="hero-image">
-      </div>
-
-      <!-- Green Button with White Letters -->
       <button id="view-portfolio-btn" class="btn btn-green">Viwe Portfolio</button>
     </div>
   </header>
 
-  <!-- Navigation & Content Section -->
+  <!-- MAIN PORTFOLIO VIEW -->
   <main id="main-portfolio" class="page-section">
-    <div class="portfolio-container">
-      
-      <!-- Header Banner with Second Picture -->
-      <div class="banner-wrapper">
-        <img src="1000945658.jpg" alt="Falcon perched on a post" class="banner-image">
-        <div class="banner-overlay">
-          <h2>William Thatego Kola</h2>
-        </div>
-      </div>
+    <div class="portfolio-overlay">
+      <h2 class="portfolio-header-title">William Thatego Kola</h2>
 
-      <!-- Navigation Buttons (Black with White Text) -->
       <nav class="nav-buttons">
-        <button class="nav-btn active" data-target="about-section">ABOUT</button>
-        <button class="nav-btn" data-target="skills-section">SKILLS</button>
-        <button class="nav-btn" data-target="projects-section">PROJECTS</button>
-        <button class="nav-btn" data-target="contacts-section">CONTACTS</button>
+        <button class="nav-btn" data-target="about-modal">ABOUT</button>
+        <button class="nav-btn" data-target="skills-modal">SKILLS</button>
+        <button class="nav-btn" data-target="projects-modal">PROJECTS</button>
+        <button class="nav-btn" data-target="contacts-modal">CONTRACTS</button>
       </nav>
 
-      <!-- Section Contents -->
-      <div class="content-area">
-        
-        <!-- About Section -->
-        <section id="about-section" class="tab-content active">
-          <h3>ABOUT</h3>
-          <div class="info-card center-text">
-            <h4>Hello!</h4>
-            <p>I'm Thatego William Kola,<br>A Front End Web Developer.</p>
-            <p>I build a clean, Morden, and user-friendly websites using a standard HTML, CSS &amp; JavaScript.</p>
-          </div>
-        </section>
-
-        <!-- Skills Section -->
-        <section id="skills-section" class="tab-content">
-          <h3>SKILLS</h3>
-          <div class="info-card">
-            <p>I have 1 year 3 months of skills which i gained from Freecodecamp.com.</p>
-            
-            <hr class="divider">
-
-            <!-- Certificate Uploading Section -->
-            <div class="upload-box">
-              <h4>Upload Certificates</h4>
-              <p class="subtitle">Upload image or document files of your certificates below:</p>
-              
-              <input type="file" id="cert-input" accept="image/*,.pdf" multiple>
-              <label for="cert-input" class="file-label">Choose Files / Images</label>
-
-              <div id="cert-list" class="cert-grid"></div>
-            </div>
-          </div>
-        </section>
-
-        <!-- Projects Section -->
-        <section id="projects-section" class="tab-content">
-          <h3>PROJECTS</h3>
-
-          <!-- Project 1 -->
-          <div class="project-card">
-            <h4>1. Landlords Website</h4>
-            <p>A responsive web application designed for backyard tenants to easily view, track and pay their monthly rent to landlords.</p>
-            <div class="project-url">
-              <label>Live URL:</label>
-              <input type="text" placeholder="https://..." value="">
-            </div>
-          </div>
-
-          <!-- Project 2 -->
-          <div class="project-card">
-            <h4>2. Non's Bakery Website</h4>
-            <p>A responsive client website created for a local bakery featuring product galleries, payment button, location and an interactive contact form</p>
-            <div class="project-url">
-              <label>Live URL:</label>
-              <input type="text" placeholder="https://..." value="">
-            </div>
-          </div>
-        </section>
-
-        <!-- Contacts Section -->
-        <section id="contacts-section" class="tab-content">
-          <h3>CONTACTS</h3>
-          <div class="info-card contact-card">
-            <p><strong>Phone:</strong> <a href="tel:+27723449512">+27 72 344 9512</a></p>
-            <p><strong>Email:</strong> <a href="mailto:kolathatego@gmail.com">kolathatego@gmail.com</a></p>
-          </div>
-        </section>
-
-      </div>
-
-      <!-- Back to Top / Home -->
-      <div class="action-bar">
-        <button id="back-home-btn" class="btn btn-black-sm">← Back to Home</button>
-      </div>
-
+      <button id="back-home-btn" class="btn btn-black-sm">← Back to Home</button>
     </div>
   </main>
 
-  <!-- Footer -->
+  <!-- POPUP WINDOWS (MODALS) -->
+
+  <!-- ABOUT -->
+  <div id="about-modal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn">&times;</span>
+      <h3>ABOUT</h3>
+      <div class="info-body center-text">
+        <h4>Hello!</h4>
+        <p>I'm Thatego William Kola,<br>A Front End Web Developer.</p>
+        <p style="margin-top: 15px;">I build a clean, Morden, and user-friendly websites using a standard HTML, CSS &amp; JavaScript.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- SKILLS -->
+  <div id="skills-modal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn">&times;</span>
+      <h3>SKILLS</h3>
+      <div class="info-body">
+        <p>I have 1 year 3 months of skills which i gained from Freecodecamp.com.</p>
+        
+        <hr class="divider">
+
+        <div class="upload-box">
+          <h4>Upload Certificates</h4>
+          <p class="subtitle">Upload image or document files of your certificates below:</p>
+          
+          <input type="file" id="cert-input" accept="image/*,.pdf" multiple>
+          <label for="cert-input" class="file-label">Choose Files / Images</label>
+
+          <div id="cert-list" class="cert-grid"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PROJECTS -->
+  <div id="projects-modal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn">&times;</span>
+      <h3>PROJECTS</h3>
+      <div class="info-body">
+        <div class="project-card">
+          <h4>1. Landlords Website</h4>
+          <p>A responsive web application designed for backyard tenants to easily view, track and pay their monthly rent to landlords.</p>
+          <div class="project-url">
+            <label>Live URL:</label>
+            <input type="text" placeholder="https://..." value="">
+          </div>
+        </div>
+
+        <div class="project-card">
+          <h4>2. Non's Bakery Website</h4>
+          <p>A responsive client website created for a local bakery featuring product galleries, payment button, location and an interactive contact form</p>
+          <div class="project-url">
+            <label>Live URL:</label>
+            <input type="text" placeholder="https://..." value="">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONTACTS -->
+  <div id="contacts-modal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn">&times;</span>
+      <h3>CONTACTS</h3>
+      <div class="info-body">
+        <p><strong>Phone:</strong> <a href="tel:+27723449512">+27 72 344 9512</a></p>
+        <p style="margin-top: 10px;"><strong>Email:</strong> <a href="mailto:kolathatego@gmail.com">kolathatego@gmail.com</a></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
   <footer>
     <p>©2026 William Thatego Kola.</p>
     <p><a href="http://www.williamthatego-dev-portfolio.com" target="_blank" rel="noopener">www.williamthatego-dev-portfolio.com</a></p>
@@ -130,3 +118,4 @@
   <script src="script.js"></script>
 </body>
 </html>
+
