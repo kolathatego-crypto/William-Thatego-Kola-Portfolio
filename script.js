@@ -1,53 +1,23 @@
-// Wait for the DOM to fully load before running scripts
-// Wait for the DOM to fully load before running scripts
-document.addEventListener('DOMContentLoaded', () => {
+// Unhide portfolio sections when clicking View Portfolio
+function showPortfolio() {
+    const content = document.getElementById("portfolioContent");
+    const button = document.getElementById("viewBtn");
 
-  // 1. Dynamic Year in Footer
-  // Automatically updates the copyright year so it's always current
-  const footerText = document.querySelector('footer p');
-  if (footerText) {
-    const currentYear = new Date().getFullYear();
-    footerText.innerHTML = `&copy; ${currentYear} William Thatego. www.williamthatego-dev-portfolio.com`;
-  }
+    content.style.display = "block";
+    content.scrollIntoView({ behavior: 'smooth' });
+    button.style.display = "none";
+}
 
-  // 2. Interactive "View Project" Links
-  // Handles clicks on your project cards gracefully
-  const projectLinks = document.querySelectorAll('.project-link');
-  projectLinks.forEach(link => {
-    link.addEventListener('click', (event) => {
-      const href = link.getAttribute('href');
-      
-      // If the link is set to "#", show a helpful popup preview
-      if (href === '#' || href === '') {
-        event.preventDefault();
-        const projectTitle = link.closest('.project-card')?.querySelector('h3')?.textContent || 'Project';
-        alert(`You clicked to view "${projectTitle}". Add your live demo link in index.html when ready!`);
-      }
-    });
-  });
+// Unhide portfolio and scroll straight to tapped section (About / Project / Contact)
+function revealAndScroll(sectionId) {
+    const content = document.getElementById("portfolioContent");
+    const button = document.getElementById("viewBtn");
 
-  // 3. Highlight Active Navigation Link on Scroll
-  // Subtle UX touch: highlights About, Project, or Contact in the top nav as you scroll
-  const sections = document.querySelectorAll('section');
-  const navLinks = document.querySelectorAll('nav a');
+    content.style.display = "block";
+    button.style.display = "none";
 
-  window.addEventListener('scroll', () => {
-    let currentSectionId = '';
-
-    sections.forEach(section => {
-      const sectionTop = section.offsetTop - 120;
-      const sectionHeight = section.offsetHeight;
-      if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
-        currentSectionId = section.getAttribute('id');
-      }
-    });
-
-    navLinks.forEach(link => {
-      link.classList.remove('active');
-      if (link.getAttribute('href') === `#${currentSectionId}`) {
-        link.classList.add('active');
-      }
-    });
-  });
-
-});
+    const targetSection = document.getElementById(sectionId);
+    if (targetSection) {
+        targetSection.scrollIntoView({ behavior: 'smooth' });
+    }
+}
