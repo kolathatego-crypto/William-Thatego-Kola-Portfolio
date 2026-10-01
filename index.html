@@ -1,67 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8">
-    <meta name="viewport"content="width=device-width,initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>William Thatego | Web Developer Portfolio</title>
-    <link rel="styleshet"href="style.css">
-  </head>
-  <body>
-    
-   <!-- Top Navigation -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Top Navigation & Hero Landing -->
     <header>
-      <div class="logo">William Thatego</div>
-      <nav>
-        <a href="#about">About</a>
-        <a href="#project">Project</a>
-        <a href="#contact">Contact</a>
-      </nav>
+        <div class="logo">William Thatego</div>
+        <nav>
+            <a href="#about">About</a>
+            <a href="#projects">Project</a>
+            <a href="#contact">Contact</a>
+        </nav>
+        
+        <!-- View Portfolio Button -->
+        <div style="margin-top: 20px;">
+            <button id="viewBtn" onclick="showPortfolio()" class="btn">View Portfolio</button>
+        </div>
     </header>
 
-    <main>
-      <!-- About/Introduction Section -->
-        <section id="about"class="hero">
-        <h1>Hi,i'm William Thatego</h1>
-        <p class="subtitle">Front-End Web Developer</p>
-        <p>I build clean, modern, and user-friendly websites using standard-compliant HTML,CSS & Javascript</p>
-        <a href="#contact" class="btn">Get in Touch</a>
-      </section>
+    <!-- Main Content (Hidden Initially) -->
+    <main id="portfolioContent" style="display: none;">
+        
+        <!-- About Section -->
+        <section id="about" class="hero">
+            <h1>Hi, I'm William Thatego</h1>
+            <p class="subtitle">Front-End Web Developer</p>
+            <p>I build clean, modern, and user-friendly websites using standard-compliant HTML, CSS & JavaScript.</p>
+            <a href="#contact" class="btn">Get in Touch</a>
+        </section>
 
-      <!-- Featured Projects Section -->
-      <section id="projects" class="projects-section">
-        <h2>My Featured Projects</h2>
+        <!-- Featured Projects Section -->
+        <section id="projects" class="projects-section">
+            <h2>My Featured Projects</h2>
+            <div class="projects-grid">
+                
+                <div class="project-card">
+                    <h3>Landlords Websites</h3>
+                    <p>A responsive web application designed for backyard tenants to easily view, track and pay their monthly rent to the landlords.</p>
+                    <a href="#" class="project-link">View Project &rarr;</a>
+                </div>
 
-        <div class="projects-grid">
+                <div class="project-card">
+                    <h3>Bakery Website</h3>
+                    <p>A responsive client website created for local bakery featuring product galleries and a contact form.</p>
+                    <a href="#" class="project-link">View Project &rarr;</a>
+                </div>
 
-          <!-- Project 1 card -->
-          <div class="project card">
-            <h3>Landlords Websites</h3>
-            <p>A responsive web application designed for backyard tenants to esily view,track and pay their monthly rent to the landlords.</p>
-            <a href="#" class="project-link">View Project &rarr;</a>
-          </div>
-          
-          <!-- Project 2 Card -->
-          <div class="project-card">
-            <h3>Bakery Website</h3>
-            <p>A responsive client website created for local bakery featuring product galleries and a contact form.</p>
-            <a href="#" class="project-link">View Project &rarr;</a>
-          </div>
-          
-        </div>
-      </section>
+            </div>
+        </section>
 
-      <!-- Contact Section -->
-      <section id="contact" class="contact-section">
-        <h2>Contact Me</h2>
-        <p>Phone:+27 72 344 9512</p>
-        <p>Email:kolathatego@gmail.com</p>
-      </section>
+        <!-- Contact Section -->
+        <section id="contact" class="contact-section">
+            <h2>Contact Me</h2>
+            <p>Phone: +27 72 344 9512</p>
+            <p>Email: kolathatego@gmail.com</p>
+        </section>
+
     </main>
 
     <!-- Footer -->
     <footer>
-      <p>&copy; 2026 William Thatego. www.williamthatego-dev-portfolio.com</p>
+        <p>&copy; 2026 William Thatego. www.williamthatego-dev-portfolio.com</p>
     </footer>
+
     <script src="script.js"></script>
-  </body>
+</body>
 </html>
