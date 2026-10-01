@@ -3,51 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>William Thatego | Web Developer Portfolio</title>
+    <title>William Thatego Kola | Web Developer Portfolio</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- Top Navigation & Hero Landing -->
-    <header>
-        <div class="logo">William Thatego</div>
+    <!-- Landing Header (No contact numbers shown here) -->
+    <header class="hero-landing">
+        <div class="logo">William Thatego Kola</div>
         <nav>
-            <a href="#about">About</a>
-            <a href="#projects">Project</a>
-            <a href="#contact">Contact</a>
+            <a href="#about" onclick="revealAndScroll('about')">About</a>
+            <a href="#projects" onclick="revealAndScroll('projects')">Project</a>
+            <a href="#contact" onclick="revealAndScroll('contact')">Contact</a>
         </nav>
-        
-        <!-- View Portfolio Button -->
-        <div style="margin-top: 20px;">
+
+        <!-- View Portfolio Action -->
+        <div class="landing-action">
             <button id="viewBtn" onclick="showPortfolio()" class="btn">View Portfolio</button>
         </div>
     </header>
 
-    <!-- Main Content (Hidden Initially) -->
+    <!-- Main Content (Revealed when tapping View Portfolio or Header Links) -->
     <main id="portfolioContent" style="display: none;">
-        
+
         <!-- About Section -->
         <section id="about" class="hero">
-            <h1>Hi, I'm William Thatego</h1>
+            <h1>Hi, I'm William Thatego Kola</h1>
             <p class="subtitle">Front-End Web Developer</p>
             <p>I build clean, modern, and user-friendly websites using standard-compliant HTML, CSS & JavaScript.</p>
-            <a href="#contact" class="btn">Get in Touch</a>
+            <a href="#contact" class="btn" onclick="revealAndScroll('contact')">Get in Touch</a>
         </section>
 
         <!-- Featured Projects Section -->
         <section id="projects" class="projects-section">
             <h2>My Featured Projects</h2>
             <div class="projects-grid">
-                
+
+                <!-- Project 1: Landlords Website -->
                 <div class="project-card">
-                    <h3>Landlords Websites</h3>
-                    <p>A responsive web application designed for backyard tenants to easily view, track and pay their monthly rent to the landlords.</p>
+                    <h3>Landlords Website</h3>
+                    <p>A responsive web application designed for backyard tenants to easily view, track and pay their monthly rent to landlords.</p>
                     <a href="#" class="project-link">View Project &rarr;</a>
                 </div>
 
+                <!-- Project 2: Bakery Website -->
                 <div class="project-card">
                     <h3>Bakery Website</h3>
-                    <p>A responsive client website created for local bakery featuring product galleries and a contact form.</p>
+                    <p>A responsive client website created for a local bakery featuring product galleries and an interactive contact form.</p>
                     <a href="#" class="project-link">View Project &rarr;</a>
                 </div>
 
@@ -57,15 +59,15 @@
         <!-- Contact Section -->
         <section id="contact" class="contact-section">
             <h2>Contact Me</h2>
-            <p>Phone: +27 72 344 9512</p>
-            <p>Email: kolathatego@gmail.com</p>
+            <p><strong>Phone:</strong> +27 72 344 9512</p>
+            <p><strong>Email:</strong> kolathatego@gmail.com</p>
         </section>
 
     </main>
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2026 William Thatego. www.williamthatego-dev-portfolio.com</p>
+        <p>&copy; 2026 William Thatego Kola. www.williamthatego-dev-portfolio.com</p>
     </footer>
 
     <script src="script.js"></script>
